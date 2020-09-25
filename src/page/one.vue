@@ -3,9 +3,6 @@
     <div>组件111一一一</div>
     {{user}}
     <button @click="changUser">按钮测试</button>
-    <div></div>
-    <button @click="changUser">按钮</button>
-    <div>123</div>
   </div>
 </template>
 <script>
