@@ -3,7 +3,7 @@
     <div>组件一一一</div>
     {{user}}
     <button @click="changUser">按钮</button>
-    <div></div>
+    <div>123</div>
   </div>
 </template>
 <script>
