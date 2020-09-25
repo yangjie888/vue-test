@@ -2,7 +2,7 @@
   <div>
     <div>组件一一一</div>
     {{user}}
-    <button @click="changUser">按钮</button>
+    <button @click="changUser">按钮测试</button>
     <div></div>
   </div>
 </template>
