@@ -3,7 +3,7 @@
     <div>
       <hello-world/>
       <el-button type="primary">
-        主要按钮
+        主要按钮2
       </el-button>
       <!-- <two-com :tt='yy'/> -->
     </div>
