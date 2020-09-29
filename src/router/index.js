@@ -20,6 +20,11 @@ export default new Router({
       name: 'two',
       component: () => import('@/page/two')
     },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('@/page/login')
+    },
     {path: '/404', name: 'WrongPage', component: () => import('@/page/404')},
     {path: '*', redirect: '/404'}
   ]
