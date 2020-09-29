@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>组件111一一一</div>
+    <div>组件1112278一一一</div>
     {{user}}
     <button @click="changUser">按钮测试</button>
   </div>
