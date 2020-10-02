@@ -38,7 +38,7 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           if (this.form.username === 'yang' && this.form.password === '123') {
-            this.$router.push('/one')
+            this.$router.push('/layout/home/menu1')
           } else {
             this.$message.error('请输入正确的用户名和密码')
           }
@@ -51,31 +51,28 @@ export default {
 }
 </script>
 
-<style acoped>
+<style lang='scss' scoped>
 .login-container {
   position: relative;
   width: 100%;
   height:100%;
-  background-color: green
-}
-.login-form {
-  position: absolute;
-  width: 350px;
-  height: 250px;
-  top:0;
-  left:0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  padding:30px;
-  background-color: rgb(255, 255, 255, 0.8); /* 透明背景色 */
-  border-radius: 20px; /* 圆角 */
-
-}
-
-/* 标题 */
-.login-title {
-  color: #303133;
-  text-align: center;
+  background-image: url('../../assets/images/login.jpg');
+  .login-form {
+    position: absolute;
+    width: 350px;
+    height: 250px;
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    padding:30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    .login-title {
+    color: #303133;
+    text-align: center;
+    }
+  }
 }
 </style>

@@ -1,9 +1,10 @@
 import OneCom from './OneCom'
 import TwoCom from './TwoCom'
-
+import AsideCom from './AsideCom'
 const components = [
   OneCom,
-  TwoCom
+  TwoCom,
+  AsideCom
 ]
 
 const install = (Vue, opts = {}) => {
