@@ -15,6 +15,7 @@
   </div>
 </template>
 <script>
+import { mapActions } from 'vuex'
 export default {
   name: 'Login',
   data () {
@@ -34,14 +35,15 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['login']),
     onSubmit (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          if (this.form.username === 'yang' && this.form.password === '123') {
+          this.login().then(() => {
             this.$router.push('/layout/home/menu1')
-          } else {
+          }).catch(() => {
             this.$message.error('请输入正确的用户名和密码')
-          }
+          })
         } else {
           return false
         }

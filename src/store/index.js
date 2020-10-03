@@ -3,12 +3,13 @@ import Vuex from 'vuex'
 import mutations from './mutations'
 import actions from './actions'
 import getters from './getters'
+import { getToken } from '@/utils/auth'
 Vue.use(Vuex)
 
 /* 项目全局State */
 const state = {
   user: 'yangjie',
-  token: 'token'
+  token: getToken() || ''
 }
 
 /* Store实例 */

@@ -1,14 +1,23 @@
 <template>
     <el-container class="con">
       <el-header>
-         <div style="height:50px;float:left;padding-top:3px;cursor:pointer">
+         <div style="height:50px;float:left;padding-top:3px;cursor:pointer" @click="goHome">
             <img src="../../assets/images/logo.png" height='30px'>
             <span style="fontWeight:bold;fontSize:25px;color:#409EFF">星星后台管理系统</span>
          </div>
-         <div style="height:100%;float:right;width:90px;overflow:hidden;text-overflow:ellipsis;white-space: nowrap">
-          <i class="el-icon-user"
-          style="display:inline-block;font-size:30px;color:#409EFF;vertical-align:middle"></i>
-          <span>杨杰</span>
+         <div style="float:right;height:100%">
+          <el-dropdown :hide-on-click="false">
+            <div style="width:90px;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space: nowrap">
+              <i class="el-icon-user" style="font-size:30px;color:#409EFF;vertical-align: middle;"></i>
+              <span>杨杰</span>
+            </div>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item>个人中心</el-dropdown-item>
+              <el-dropdown-item>
+                <div @click="tuichu">退出</div>
+              </el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
          </div>
          <div style="height:100%;float:right">
           <el-link @click="setting" type="primary" :underline="false" icon="el-icon-setting" style="font-size:30px;margin-right:20px">
@@ -22,6 +31,7 @@
     </el-container>
 </template>
 <script>
+import { removeToken } from '@/utils/auth'
 export default {
   name: 'Home',
   data () {
@@ -29,8 +39,15 @@ export default {
     }
   },
   methods: {
+    goHome () {
+      this.$router.push('/layout')
+    },
     setting () {
       this.$router.push('/layout/setting')
+    },
+    tuichu () {
+      removeToken()
+      location.reload()
     }
   }
 }
