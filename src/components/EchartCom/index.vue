@@ -1,26 +1,32 @@
 <template>
   <div>
-    <div>
-      <hello-world/>
-      <el-button type="primary">
-        主要按钮2
-      </el-button>
-      <div id="myChart" :style="{width: '300px', height: '300px'}"></div>
-    </div>
+    <div :id='idnum'  :style="{width:'100%', height:'400px'}"></div>
   </div>
 </template>
 <script>
 export default {
-  name: 'two',
+  name: 'EchartCom',
+  props: ['num'],
   data () {
     return {
-      yy: 'yangjie'
+    }
+  },
+  mounted () {
+    this.drawLine()
+  },
+  computed: {
+    idnum () {
+      return 'myChart' + this.num
     }
   },
   methods: {
     drawLine () {
       // 基于准备好的dom，初始化echarts实例
-      let myChart = this.$echarts.init(document.getElementById('myChart'))
+      let myChart = this.$echarts.init(document.getElementById(this.idnum))
+      let sizeFun = function () {
+        myChart.resize()
+      }
+      window.addEventListener('resize', sizeFun)
       // 绘制图表
       myChart.setOption({
         title: { text: '在Vue中使用echarts' },
@@ -36,9 +42,6 @@ export default {
         }]
       })
     }
-  },
-  mounted () {
-    this.drawLine()
   }
 }
 </script>

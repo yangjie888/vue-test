@@ -1,6 +1,9 @@
 <template>
   <div>
-    1
+    <div style="display:flex;justify-content:center;align-items:center;height:500px;width:600px;background:blue">
+      <div style="height:300px;width:200px;background:red"></div>
+      <div style="height:300px;width:200px;background:green"></div>
+    </div>
   </div>
 </template>
 <script>
@@ -9,6 +12,8 @@ export default {
   data () {
     return {
     }
+  },
+  methods: {
   }
 }
 </script>

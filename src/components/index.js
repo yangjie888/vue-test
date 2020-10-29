@@ -1,10 +1,14 @@
 import OneCom from './OneCom'
 import TwoCom from './TwoCom'
 import AsideCom from './AsideCom'
+import AlgCom from './AlgCom'
+import EchartCom from './EchartCom'
 const components = [
   OneCom,
   TwoCom,
-  AsideCom
+  AsideCom,
+  AlgCom,
+  EchartCom
 ]
 
 const install = (Vue, opts = {}) => {

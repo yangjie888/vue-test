@@ -1,7 +1,11 @@
 <template>
   <div>
+    <div style="height:50px;line-height:50px">
+      <el-button size="medium" icon="el-icon-plus">新增</el-button>
+    </div>
     <el-table
       :data="tableData"
+      stripe
       style="width: 100%">
       <el-table-column
         prop="date"
@@ -17,12 +21,19 @@
         prop="address"
         label="地址">
       </el-table-column>
+      <el-table-column
+      label="操作">
+        <template>
+          <el-button type="text" size="small">编辑</el-button>
+          <el-button type="text" size="small">删除</el-button>
+        </template>
+      </el-table-column>
     </el-table>
   </div>
 </template>
+
 <script>
 export default {
-  name: 'modelTwo',
   data () {
     return {
       tableData: [{
@@ -46,6 +57,3 @@ export default {
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>

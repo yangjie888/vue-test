@@ -13,16 +13,6 @@ export default new Router({
       redirect: '/layout'
     },
     {
-      path: '/one',
-      name: 'one',
-      component: () => import('@/page/one')
-    },
-    {
-      path: '/two',
-      name: 'two',
-      component: () => import('@/page/two')
-    },
-    {
       path: '/login',
       name: 'login',
       component: () => import('@/page/login')
@@ -47,6 +37,16 @@ export default new Router({
               path: 'menu2',
               name: 'menu2',
               component: () => import('@/page/modelTwo')
+            },
+            {
+              path: 'menu3',
+              name: 'menu3',
+              component: () => import('@/page/modelThree')
+            },
+            {
+              path: 'menu4',
+              name: 'menu4',
+              component: () => import('@/page/modelFour')
             }
           ]
         },

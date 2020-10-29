@@ -1,4 +1,5 @@
 import axios from 'axios'
+import store from '@/store'
 // 创建axios实例
 const service = axios.create({
   // baseURL: process.env.NODE_ENV === 'development' ? '/api' : process.env.API_ROOT,
@@ -22,9 +23,10 @@ const service = axios.create({
 // http request 请求拦截器，有token值则配置上token值
 service.interceptors.request.use(
   config => {
-    // if (store.state.token) {
+    if (store.state.token) {
     //   config.headers.Authorization = store.state.token
-    // }
+      config.headers.Authorization = '12345'
+    }
     return config
   },
   err => {
